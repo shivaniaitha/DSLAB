@@ -72,10 +72,12 @@ void add_ele(int ele)
 			if(f_ptr==NULL)
 			f_ptr=queue;
 			else
+			{
 			struct q_point *ptr;
 			ptr=f_ptr;
 			for(ptr=f_ptr;ptr->n!=NULL;ptr=ptr->n);
-			ptr->=queue;
+			ptr->n= queue;
+			}
 			}
 int rem_ele()
 {
@@ -96,7 +98,6 @@ else
 }
 void show_ele()
 {
-	int ptr;
 	struct q_point *ptr=NULL;
 	ptr=f_ptr;
 	if(e_que())
